@@ -1,0 +1,50 @@
+[
+  {
+    "q": "The capital of the Great Britain?",
+    "a": ["London"],
+    "type": "FREE"
+  },
+  {
+    "q": "What is the best programming language?",
+    "a": [
+      "Java",
+      "C++",
+      "Brainfuck",
+      "Prolog"
+    ],
+    "index": 0,
+    "type": "CHOICE"
+  },
+  {
+    "q": "Best world's hockey player nickname?",
+    "a": ["Ovi"],
+    "type": "FREE"
+  },
+  {
+    "q": "public static void ...?",
+    "a": [
+      "brain",
+      "slave",
+      "main",
+      "crap"
+    ],
+    "index": 2,
+    "type": "CHOICE"
+  },
+  {
+    "q": "GoF?",
+    "a": ["Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides"],
+    "type": "FREE"
+  },
+  {
+    "q": "calling ... forces the current thread to wait until some other thread invokes notify()",
+    "a": [
+      "exit(-1)",
+      "wait()",
+      "System.gc()",
+      "main()"
+    ],
+    "index": 1,
+    "type": "CHOICE"
+  }
+]
