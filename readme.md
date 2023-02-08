@@ -27,3 +27,96 @@
 7. База данных может быть inmemory.
 8. Для работы с БД желательно использовать Spring JDBC template или Spring Data JDBC или просто JDBC. ( не надо использовать JPA и Hibernate ).
 9. (Опциональное требование) сервис, по возможности, покрыть Unit-тестами.
+
+### Примеры запросов
+```shell
+### Регистрация пользователя
+POST http://localhost:8080/signup
+Content-Type: application/json
+
+{
+  "username": "max",
+  "password": "1234",
+  "passwordConfirm": "1234"
+}
+
+### Логин пользователя
+POST http://localhost:8080/signin
+Content-Type: application/json
+
+{
+  "username": "max",
+  "password": "1234"
+}
+
+### Создать вопросы
+POST http://localhost:8080/questions
+Content-Type: application/json
+
+[
+  {
+    "q": "The capital of the Great Britain?",
+    "a": ["London"],
+    "type": "FREE"
+  },
+  {
+    "q": "What is the best programming language?",
+    "a": [
+      "Java",
+      "C++",
+      "Brainfuck",
+      "Prolog"
+    ],
+    "index": 0,
+    "type": "CHOICE"
+  },
+  {
+    "q": "Best world's hockey player nickname?",
+    "a": ["Ovi"],
+    "type": "FREE"
+  },
+  {
+    "q": "public static void ...?",
+    "a": [
+      "brain",
+      "slave",
+      "main",
+      "crap"
+    ],
+    "index": 2,
+    "type": "CHOICE"
+  },
+  {
+    "q": "GoF?",
+    "a": ["Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides"],
+    "type": "FREE"
+  },
+  {
+    "q": "calling ... forces the current thread to wait until some other thread invokes notify()",
+    "a": [
+      "exit(-1)",
+      "wait()",
+      "System.gc()",
+      "main()"
+    ],
+    "index": 1,
+    "type": "CHOICE"
+  }
+]
+
+### Посмотреть свои ответы
+GET http://localhost:8080/snapshot
+Content-Type: application/json
+Authorization: dffe54ac-dea4-4e0a-9af8-dbdb5f4af29c
+
+### Ответить
+POST http://localhost:8080/answer
+Content-Type: application/json
+Authorization: d4faf6f0-9753-401d-85f7-ad25286d7046
+
+{
+  "questionId": 1,
+  "userValue": "test"
+}
+
+```
